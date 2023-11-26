@@ -14,9 +14,6 @@
     "ecmaVersion": "latest",
     "sourceType": "module" // Adiciona esta linha para indicar que você está usando módulos ES6
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
-  "rules": {
-  }
+  "plugins": ["@typescript-eslint"],
+  "rules": {}
 }
