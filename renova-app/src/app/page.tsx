@@ -1,3 +1,6 @@
+import Noticia from "./components/noticia";
+
+
 export default function Home() {
-  return <p></p>
+  return <Noticia />
 }
