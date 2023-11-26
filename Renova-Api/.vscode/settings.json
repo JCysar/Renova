@@ -3,6 +3,6 @@
   "terminal.integrated.fontSize": 16,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
+    "source.fixAll.eslint": true
   }
 }

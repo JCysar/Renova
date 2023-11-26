@@ -6,6 +6,6 @@ import { validatingToken } from '../middleware/token.js'
 
 export const router = Router()
 
-router.post('/cadastrar',validateFields(registerSchema), singUp)
+router.post('/cadastrar', validateFields(registerSchema), singUp)
 router.post('/login', validateFields(loginSchema), signIn)
 router.get('/usuario', validatingToken, alreadyIn)
