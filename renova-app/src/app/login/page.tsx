@@ -1,3 +1,3 @@
-export default function login(): React.ReactNode {
+export default function login(){
   return <p>oloko</p>
 }
