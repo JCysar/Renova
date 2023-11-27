@@ -17,7 +17,7 @@ const config: Config = {
       colors: {
         Branco: '#ffffff',
         Azul: '#004080',
-        'Azul-claro': '#3399ff',
+        Azul_claro: '#3399ff',
         verde: '#7FD279'
       }
     }
