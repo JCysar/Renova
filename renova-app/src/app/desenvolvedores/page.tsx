@@ -1,74 +1,61 @@
-import Image from 'next/image'
+'use client'
+
+import Dev from '../components/dev'
 
 export default function devs() {
+  const gradientStyle = {
+    backgroundImage: `linear-gradient(to top, #004080 , #3399ff)`,
+    WebkitBackgroundClip: 'text',
+    color: 'transparent',
+  }
   return (
     <div id="body-center" className="">
-      <h2 id="dev-title">DESENVOLVEDORES</h2>
+      <h2 id="dev-title" className=" flex font-bold text-2xl font text-col justify-center my-6 " style={gradientStyle}>
+        DESENVOLVEDORES
+      </h2>
+      <div id="devs-container" className=" w-full flex-auto  ml-2">
 
-      <div
-        id="devs-container"
-        className=" w-full flex-auto md:mx-3 md:flex md:justify-between text-center  "
-      >
-        <div className="flex justify-center items-center  w-full  md:flex-col my-2">
-          <Image
-            src="/Icones/D_Cavalcanti.jpg"
-            alt="Imagem do desenvolvedor"
-            className="rounded-full h-24"
-            width={100}
-            height={100}
-          />
-          <p className="ml-3">Daniel Cavalcanti</p>
-        </div>
-        <div className="flex justify-center items-center  w-full  md:flex-col my-2">
-          <Image
-            src="/Icones/D_Pereira.jpg"
-            alt="Imagem do desenvolvedor"
-            className="rounded-full h-24"
-            width={100}
-            height={100}
-          />
-          <p className="ml-6">Daniel Pereira</p>
-        </div>
-        <div className="flex justify-center items-center  w-full  md:flex-col my-2">
-          <Image
-            src="/Icones/Julio.jpg"
-            alt="Imagem do desenvolvedor"
-            className="rounded-full h-24"
-            width={100}
-            height={100}
-          />
-          <p className="ml-10">Júlio Cesar</p>
-        </div>
-        <div className="flex justify-center items-center  w-full  md:flex-col my-2">
-          <Image
-            src="/Icones/Irinaldo.jpeg"
-            alt="Imagem do desenvolvedor"
-            className="rounded-full h-24"
-            width={100}
-            height={100}
-          />
-          <p className="ml-6">Irinaldo Júnior</p>
-        </div>
-        <div className="flex justify-center items-center  w-full  md:flex-col my-2">
-          <Image
-            src="/Icones/Caio.jpeg"
-            alt="Imagem do desenvolvedor"
-            className="rounded-full h-24 "
-            width={100}
-            height={100}
-          />
-          <p className="ml-14">Caio Luiz</p>
-        </div>
-        <div className="flex justify-center items-center  w-full  md:flex-col my-2">
-          <Image
-            src="/Icones/Marcos.jpg"
-            alt="Imagem do desenvolvedor"
-            className="rounded-full h-24"
-            width={100}
-            height={100}
-          />
-          <p className="ml-4">Marcos Arruda</p>
-        </div>
+        <Dev
+          name="Daniel Pereira"
+          image="/Icones/D_Pereira.jpg"
+          description="Especialista em Rainbow Six"
+        />
+        <div className=" border-2" style={{ backgroundImage: 'linear-gradient(to right, #4dc0b5, #3490dc)' }}></div>
+
+        <Dev
+          name="Daniel Cavalcante"
+          image="/Icones/D_Cavalcanti.jpg"
+          description="Qual a necessidade disso?"
+
+        />
+        <div className=" border-2 border-grey-200"></div>
+
+        <Dev
+          name="Irinaldo"
+          image="/Icones/Irinaldo.jpeg"
+          description="Especialista em não dormir"
+        />
+        <div className=" border-2 border-grey-200"></div>
+
+        <Dev
+          name="Julio"
+          image="/Icones/Julio.jpg"
+          description="Coxinha"
+        />
+        <div className=" border-2 border-grey-200"></div>
+
+        <Dev
+          name="Caio"
+          image="/Icones/Caio.jpeg"
+          description="Viajando..."
+        />
+        <div className=" border-2 border-grey-200"></div>
+
+        <Dev
+          name="Marcos"
+          image="/Icones/Marcos.jpg"
+          description="Bikes e vidros"
+        />
       </div>
     </div>
   )
