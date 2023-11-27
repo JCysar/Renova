@@ -7,8 +7,8 @@ import Image from 'next/image'
 export default function Footer() {
   return (
     <nav>
-      <div className="absolute z-40 w-full ">
-        <div className="flex bg-Azul-claro text-white p-4 px-20 max-md:flex-wrap max-md:px-0">
+      <div className="absolute z-40 w-full  bg-gradient-to-t from-cyan-500 to-blue-500">
+        <div className="flex  text-white p-4 px-20 max-md:flex-wrap max-md:px-0">
           <div id="col1" className="flex-auto px-1 relative max-md:w-20">
             <div className="flex justify-center">
               <div className="flex flex-col">
@@ -74,8 +74,9 @@ export default function Footer() {
 
         <div id="devby" className="bg-neutral-600 text-center text-white p-1">
           <p>
-            ADS
-            <Link href="https://www.google.com.br/">Teste</Link>
+            <Link href="https://www.google.com.br/">
+              DESENVOLVIDO POR DevADS Group
+            </Link>
           </p>
         </div>
       </div>
