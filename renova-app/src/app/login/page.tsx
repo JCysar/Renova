@@ -1,9 +1,10 @@
-
 export default function login() {
   return (
-    <div className="flex items-center justify-center  md:py-40 py-20 "> 
+    <div className="flex items-center justify-center  md:py-40 py-20 ">
       <div className="w-96 md:p-4 p-6 bg-Azul rounded-lg ">
-        <h1 className="text-2xl font-bold mb-4 text-center text-Branco">Login</h1>
+        <h1 className="text-2xl font-bold mb-4 text-center text-Branco">
+          Login
+        </h1>
         <form>
           <div className="mb-4">
             <label

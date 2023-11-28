@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <nav>
+    <nav id="contato">
       <div className="absolute z-40 w-full  bg-gradient-to-t from-cyan-500 to-blue-500">
         <div className="flex  text-white p-4 px-20 max-md:flex-wrap max-md:px-0">
           <div id="col1" className="flex-auto px-1 relative max-md:w-20">
@@ -14,7 +14,7 @@ export default function Footer() {
               <div className="flex flex-col">
                 <h1 className="font-bold text-2xl pb-3 ">Contato</h1>
                 <p className=" text-base ">(55) 81 9 9935-1919</p>
-                <p className=" text-base py-1">teste</p>
+                <p className=" text-base py-1">teste@gmail.com</p>
                 <div className="flex flex-row ">
                   <Link href="https://www.google.com.br/" className="p-1">
                     <Image
@@ -72,13 +72,6 @@ export default function Footer() {
           </div>
         </div>
 
-        <div id="devby" className="bg-neutral-600 text-center text-white p-1">
-          <p>
-            <Link href="https://www.google.com.br/">
-              DESENVOLVIDO POR DevADS Group
-            </Link>
-          </p>
-        </div>
       </div>
     </nav>
   )

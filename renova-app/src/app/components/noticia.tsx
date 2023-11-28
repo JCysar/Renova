@@ -1,20 +1,27 @@
 import Image from 'next/image'
 
-export default function Noticia() {
+interface UNoticia {
+  image: string,
+  title: string,
+  text: string
+}
+export default function Noticia({...props}: UNoticia) {
   return (
-    <div className=" align-middle md:flex">
+    <div className=" flex flex-wrap  items-center justify-center my-10 md:flex-nowrap  md:max-w-md">
       <Image
-        src="/logo.png"
-        className=" self-center md:mx-3"
-        width={100}
-        height={100}
+        src={props.image}
+        className="mr-3"
+        width={153}
+        height={116}
         alt="imagem da noticia"
       />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-        minus enim! Quo sapiente esse adipisci laborum unde omnis vel a quidem
-        maiores? Placeat fugiat quis, culpa harum voluptatibus libero accusamus.
-      </p>
+      <div className=''>
+        <h3 className='font-bold  my-3 text-center md:text-start'>{props.title}</h3>
+        <p className=' md:line-clamp-4'>
+          {props.text}
+        </p>
+
+      </div>
     </div>
   )
 }

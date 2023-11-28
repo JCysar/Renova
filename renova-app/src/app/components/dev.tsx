@@ -9,9 +9,9 @@ interface DevProps {
 }
 export default function Dev({ ...props }: DevProps) {
   return (
-    <div className=" flex items-center justify-center">
+    <div className=" flex items-center justify-center ">
       <div className="flex-colun justify-center mr-6  my-2 text-center">
-        <div className='flex justify-center'>
+        <div className="flex justify-center">
           <Image
             src={props.image}
             alt="Imagem do desenvolvedor"
@@ -20,11 +20,11 @@ export default function Dev({ ...props }: DevProps) {
             height={100}
           />
         </div>
-        <p className='w-32'>{props.name}</p>
+        <p className="w-64">{props.name}</p>
       </div>
 
-      <div className=' w-full md:w-96'>
-        <div className=' text-center'>
+      <div className=" w-full md:w-96">
+        <div className=" text-center">
           <p>{props.description}</p>
         </div>
         <div className="flex justify-center mt-3">
