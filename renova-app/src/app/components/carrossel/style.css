@@ -12,7 +12,7 @@
   margin-right: initial !important;
 }
 
-.fade .swiper-button-next::after,
+/* .fade .swiper-button-next::after,
 .fade .swiper-button-prev::after,
 .rewind .swiper-button-next::after,
 .rewind .swiper-button-prev::after {
@@ -37,9 +37,9 @@
   top: initial;
   bottom: 0;
   color: white;
-}
+} */
 
-.rewind .swiper-button-next {
+/* .rewind .swiper-button-next {
   left: 1.5rem;
   width: 3rem;
   height: 3rem;
@@ -53,11 +53,11 @@
   height: 3rem;
   background-color: crimson;
   left: 6rem;
-}
+} */
 
 /* fade */
 
-.fade .swiper-button-prev,
+/* .fade .swiper-button-prev,
 .fade .swiper-button-next {
   background-color: cadetblue;
 }
@@ -76,7 +76,7 @@
   height: 3rem;
   background-color: indigo;
   left: initial;
-}
+} */
 
 .fade .swiper-pagination {
   position: absolute;
@@ -88,12 +88,12 @@
   font-weight: bold;
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   0% {
     transform: translateY(-20px);
     opacity: 0;
   }
-}
+} */
 
 .fade .date,
 .fade .title,
@@ -116,6 +116,27 @@
   animation: fadeIn 0.4s cubic-bezier(0.54, 1.3, 0.63, 1.34) 0.7s backwards;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+    color: white !important;
+
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: gray !important;
+
+}
 
 
+@media screen and (max-width: 768px) {
+  .swiper-button-next::after {
+    display: none;
+  }
+
+  .swiper-button-prev::after {
+    display: none;
+  }
+
+}
 

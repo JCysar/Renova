@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="flex justify-center">
               <div className="flex flex-col">
                 <h1 className="font-bold text-2xl pb-3 ">Contato</h1>
-                <p className=" text-base ">(55) 81 9 9935-1919</p>
+                <p className=" text-base ">(55) 81 9 9939-9999</p>
                 <p className=" text-base py-1">teste@gmail.com</p>
                 <div className="flex flex-row ">
                   <Link href="https://www.google.com.br/" className="p-1">

@@ -23,7 +23,7 @@ return (
   <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
     <div className=" flex flex-wrap items-center justify-between md:mx-10 p-4">
       <Link
-        href="#"
+        href="/"
         className="flex items-center space-x-3 rtl:space-x-reverse"
       >
         <Image

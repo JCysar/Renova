@@ -42,9 +42,9 @@ const content = [
 
 export default function Fade() {
   return (
-    <section className="pt-[2rem] pb-[2rem]  bg-gradient-to-l from-cyan-500 to-blue-500">
+    <section className=" pb-[1rem]  bg-gradient-to-l from-cyan-500 to-blue-500">
       <div className="lg:mx-auto max-w-5xl mx-[1.5rem]">
-        <h1 className="text-[3rem] text-white font-bold underline mb-[2rem] text-center">
+        <h1 className="text-[3rem] text-white font-bold underline mb-[1rem] text-center">
           Notícias Gerais
         </h1>
         <Swiper
@@ -53,7 +53,7 @@ export default function Fade() {
           loop={true}
           pagination={{
             clickable: true,
-           
+
           }}
           autoplay={{ delay: 4000 }}
           spaceBetween={30}
@@ -66,19 +66,19 @@ export default function Fade() {
                 className=" grid md:grid-cols-2 gap-y-10 md:gap-x-10 x-md:pt-10 "
                 key={index}
               >
-                <div className=''>
-                  <Image src={p.img} alt=""   width={1000} height={1000}  />
+                <div className='flex justify-center'>
+                  <Image src={p.img} alt=""   width={800} height={800}  />
                 </div>
                 <div className="px-y pt-7">
-                  <header className="date text-black font-bold ">
+                  <header className="date text-slate-200 font-bold ">
                     {p.date}
                   </header>
                     <div className="title ">
-                      <h1 className="font-bold mt-10 ">{p.header}</h1>
-                      <p>{p.info}</p>
+                      <h1 className="font-bold mt-3 text-xl text-white ">{p.header}</h1>
+                      <p className=" text-white line-clamp-2 ">{p.info}</p>
                     </div>
                     <Link href={p.link} >
-                      <button className="btn bg-Azul p-[1rem_1.5rem] font-bold text-white mt-5 ">
+                      <button className="btn bg-Azul p-[1rem_1.5rem] font-bold text-white mt-2 ">
                         Saiba mais
                       </button>
                     </Link>

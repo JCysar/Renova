@@ -62,8 +62,9 @@ export const signIn = async (req: Request, res: Response) => {
     return res.json({mensagem: "Login efetuado com sucesso!", token})
 
   } catch (error) {
-
-      res.status(500).json({ mensagem: 'Erro interno do servidor' })
+    console.log(error);
+    
+    res.status(500).json({ mensagem: 'Erro interno do servidor' })
   }
 }
 

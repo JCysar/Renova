@@ -17,7 +17,7 @@ export default function Noticia({...props}: UNoticia) {
       />
       <div className=''>
         <h3 className='font-bold  my-3 text-center md:text-start'>{props.title}</h3>
-        <p className=' md:line-clamp-4'>
+        <p className='text-justify md:text-start md:line-clamp-4'>
           {props.text}
         </p>
 
