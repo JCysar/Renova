@@ -1,8 +1,12 @@
 {
   /* "editor.fontSize": 18,
   "terminal.integrated.fontSize": 16,
+<<<<<<< HEAD:renova-app/.vscode/settings.json
   "editor.formatOnSave": false, */
+=======
+  "editor.formatOnSave": true,
+>>>>>>> ce12cd1b5c6c2b91e3136159b8742609081c25de:Renova-Api/.vscode/settings.json
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
   }
 }
