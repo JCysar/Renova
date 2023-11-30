@@ -31,7 +31,6 @@ export const singUp = async (req: Request, res: Response) => {
 
     return res.status(201).json()
   } catch (error) {
-    console.log(error.message)
 
     res.status(500).json({ mensagem: 'Erro interno do servidor' })
   }

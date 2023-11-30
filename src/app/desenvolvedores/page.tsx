@@ -1,15 +1,15 @@
 'use client'
 
 import Dev from '../components/dev'
-export const gradientStyle = {
-  backgroundImage: `linear-gradient(to top, #004080 , #3399ff)`,
-  WebkitBackgroundClip: 'text',
-  color: 'transparent'
-}
 
 export default function devs() {
+  const gradientStyle = {
+    backgroundImage: `linear-gradient(to top, #004080 , #3399ff)`,
+    WebkitBackgroundClip: 'text',
+    color: 'transparent'
+  }
   return (
-    <div  className="w-full  my-6">
+    <div  className="w-full">
       <h2
         id="dev-title"
         className=" flex font-bold text-2xl font text-col justify-center my-6 "

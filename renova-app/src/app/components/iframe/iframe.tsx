@@ -1,7 +1,7 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
-/* eslint-disable no-undef */
-import MapEmbed from "./MapEmbed";
-import MapMobile from "./MapMobile";
+"use client"
+
+import MapDekstop from "./mapDekstop";
+import MapMobile from "./mapMobile";
 
 
 function Maps() {
@@ -10,9 +10,11 @@ function Maps() {
 
   return (
     <div className="App flex-auto">
-      <section id="mapa" className="mx-auto uppercase">
-        <div className='text-center flex justify-center'>
-          {screenSize > 420 ? <MapEmbed /> : <MapMobile />}
+      <section id="mapa" className="my-6 mx-3">
+        <h1 className="my-2 text-center font-bold text-2xl md:text-start">Endereço</h1>
+        <div className="border-2 border-grey-200 md:w-5/6"></div>
+        <div className='text-center flex justify-center mt-3'>
+          {screenSize > 420 ? <MapDekstop /> : <MapMobile />}
         </div>
       </section>
     </div>
