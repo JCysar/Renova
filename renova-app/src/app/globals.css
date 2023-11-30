@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+h1 {
+  background: linear-gradient(to top, #004080, #3399ff);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
+}
