@@ -21,7 +21,7 @@ export default function devs() {
         <Dev
           name="Daniel Pereira"
           image="/Icones/D_Pereira.jpg"
-          description="Especialista em Rainbow Six"
+          description="Descrição da pessoa"
         />
         <div
           className=" border-2"
@@ -33,27 +33,27 @@ export default function devs() {
         <Dev
           name="Daniel Cavalcante"
           image="/Icones/D_Cavalcanti.jpg"
-          description="Qual a necessidade disso?"
+          description="Descrição da pessoa"
         />
         <div className=" border-2 border-grey-200 w-full"></div>
 
         <Dev
           name="Irinaldo"
           image="/Icones/Irinaldo.jpeg"
-          description="Especialista em não dormir"
+          description="Descrição da pessoa"
         />
         <div className=" border-2 border-grey-200 w-full"></div>
 
-        <Dev name="Julio" image="/Icones/Julio.jpg" description="Coxinha" />
+        <Dev name="Julio" image="/Icones/Julio.jpg" description="Descrição da pessoa" />
         <div className=" border-2 border-grey-200 w-full"></div>
 
-        <Dev name="Caio" image="/Icones/Caio.jpeg" description="Viajando..." />
+        <Dev name="Caio" image="/Icones/Caio.jpeg" description="Descrição da pessoa" />
         <div className=" border-2 border-grey-200  "></div>
 
         <Dev
           name="Marcos"
           image="/Icones/Marcos.jpg"
-          description="Bikes e vidros"
+          description="Descrição da pessoa"
         />
       </div>
     </div>
