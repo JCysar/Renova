@@ -29,14 +29,14 @@ const content = [
     date: '08 Outubro 2023',
     header: 'Prefeitura promove ações destinadas a saúde da mulher no Outubro Rosa',
     info: 'Mulher prepara vacina contra a Covid-19 para aplicação no Recife',
-    link: 'https://www2.recife.pe.gov.br/noticias/01/09/2022/setembro-amarelo-prefeitura-do-recife-oferece-assistencia-saude-mental',
+    link: 'https://www.pmsaposse.sp.gov.br/campanha-outubro-rosa-promove-acoes-com-foco-na-saude-da-mulher/',
   },
   {
     img: '/Novembro-Azul.jpeg',
     date: '17 Novembro 2023',
     header: 'Prefeitura do Recife reforça importância dos cuidados com a saúde integral do homem no Novembro Azul',
     info: ' Cuidados básicos com a saúde e a realização de exames de rotina são as formas mais eficazes para identificar qualquer doença precocemente e iniciar o tratamento. Na Rede Municipal, público deve buscar serviço em mais de 150 unidades de saúde, além de laboratórios da rede conveniada',
-    link: 'https://pmsaposse.sp.gov.br/campanha-outubro-rosa-promove-acoes-com-foco-na-saude-da-mulher/',
+    link: 'https://www2.recife.pe.gov.br/noticias/17/11/2022/prefeitura-do-recife-reforca-importancia-dos-cuidados-com-saude-integral-do',
   },
 ];
 
