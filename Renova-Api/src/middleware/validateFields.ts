@@ -6,6 +6,7 @@ export const validateFields =
       await joiSchema.validateAsync(req.body)
       next()
     } catch (erro) {
+      
       return res.status(400).json({ mensagem: erro.message })
     }
   }

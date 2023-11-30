@@ -10,7 +10,6 @@ export interface User {
   password?: string
 }
 export const singUp = async (req: Request, res: Response) => {
-  console.log(req.body)
   const { email, name, password }: User = req.body
 
   const encriptedPassword = await encrypt(password)
@@ -58,10 +57,9 @@ export const signIn = async (req: Request, res: Response) => {
 
     const token = createToken(id)
 
-    return res.json({mensagem: "Login efetuado com sucesso!", token})
+    return res.status(200).json({mensagem: "Login efetuado com sucesso!", token})
 
   } catch (error) {
-    console.log(error);
     
     res.status(500).json({ mensagem: 'Erro interno do servidor' })
   }
