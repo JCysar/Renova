@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { encrypt } from '../utils/criptografy.js'
-import { createUser, findUserByEmail, findUserById, login } from '../repositories/user.js'
+import { News, createNew, createUser, findNewById, findUserByEmail, findUserById, login } from '../repositories/user.js'
 import { createToken } from '../utils/token.js'
 
 export interface User {
@@ -28,7 +28,7 @@ export const singUp = async (req: Request, res: Response) => {
 
     await createUser(user)
 
-    return res.status(201).json()
+    return res.status(200).json()
   } catch (error) {
 
     res.status(500).json({ mensagem: 'Erro interno do servidor' })
@@ -76,5 +76,78 @@ export const alreadyIn = async (req: ExtendedRequest, res: Response) => {
 
   } catch (error) {
     res.status(500).json({mensagem: "Erro interno do servidor"})
+  }
+}
+
+
+interface New {
+  title: string
+  text: string
+  image: string
+  authorId: string
+}
+
+export const contentNew = async (req: ExtendedRequest, res: Response) => {
+  const {title, image, text} = req.body
+
+  const NewObject: New = {
+    title,
+    text,
+    image,
+    authorId: req.id
+  }
+  try {
+    const result = await createNew(NewObject)
+    
+
+    if(!result)
+      return res.status(400).json({mensagem: "Erro na criação da noticia"})
+
+    return res.status(200).json()
+  } catch (error) {
+    
+    res.status(500).json({mensagem: "Erro interno do servidor"})
+    
+  }
+
+
+}
+
+
+export const getNews = async (req: Request, res: Response) => {
+  
+  try {
+    const result = await News()
+    if(!result)
+      return res.status(400).json({mensagem: "Erro na busca da noticia"})
+
+    
+    return res.status(200).json(result)
+
+  } catch (error) {
+    console.log(error.message);
+    
+    res.status(500).json({mensagem: "Erro interno do servidor"})
+    
+  }
+}
+
+
+export const getNewParams = async (req: Request, res: Response) => {
+  const { id  } = req.params
+  
+  try {
+    const result =  await findNewById(id)
+    if(!result)
+      return res.status(400).json({mensagem: "Erro na busca da noticia"})
+
+    
+    return res.status(200).json(result)
+
+  } catch (error) {
+    console.log(error.message);
+    
+    res.status(500).json({mensagem: "Erro interno do servidor"})
+    
   }
 }
