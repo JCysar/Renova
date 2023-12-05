@@ -3,55 +3,57 @@ import Comunidade from './components/comunidade'
 import Noticia from './components/noticia'
 import Link from 'next/link'
 
+const getNew = async () => {
 
-export default function Home() {
- 
+  const response = await fetch('http://localhost:3001/news/', {
+    cache: 'no-store'
+  })
+
+  const data = await response.json()
+
+
+  return data
+
+
+}
+interface UNoticias {
+  id: number,
+  title: string,
+  text: string,
+  image: string
+}
+
+export default async function Home() {
+
+
+  const data = await getNew()
+
+
   return (
+
     <div className=''>
       <div className='my-6 block px-10'>
         <h1 className='text-2xl font-bold my-6 mx-3 text-center'>Comunidade</h1>
         <h1 className='text-2xl font-bold my-6 mx-3'>Noticias</h1>
         <div className=" border border-grey-200 md:w-5/6"></div>
         <div className='md:grid md:grid-cols-2'>
-          <Link href="/noticia" >
-            <Noticia
-            image="/logo.png"
-            title='titulo 1'
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-            minus enim! Quo sapiente esse adipisci laborum unde omnis vel a quidem
-            maiores? Placeat fugiat quis, culpa harum voluptatibus libero accusamus."/>
-          </Link>
-          <div className=" border-2 border-grey-200 w-full md:hidden"></div>
 
+          {
+            data.map( (element: UNoticias) => {
+              return (
+                <div key={element.id} className='w-full'>
+                  <Link href={`/noticia/${element.id}`} >
+                    <Noticia
+                    image={element.image}
+                    title= {element.title}
+                    text={element.text}/>
+                  </Link>
+                  <div className=" border-2 border-grey-200 w-full md:hidden"></div>
+                </div>
+              )
+            })
+          }
 
-          <Link href="/noticia" >
-            <Noticia
-            image="/logo.png"
-            title='titulo 2'
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-            minus enim! Quo sapiente esse adipisci laborum unde omnis vel a quidem
-            maiores? Placeat fugiat quis, culpa harum voluptatibus libero accusamus."/>
-          </Link>
-          <div className=" border-2 border-grey-200 w-full md:hidden"></div>
-
-          <Link href="/noticia" >
-            <Noticia
-            image="/logo.png"
-            title='titulo 3'
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-            minus enim! Quo sapiente esse adipisci laborum unde omnis vel a quidem
-            maiores? Placeat fugiat quis, culpa harum voluptatibus libero accusamus."/>
-          </Link>
-          <div className=" border-2 border-grey-200 w-full md:hidden"></div>
-
-          <Link href="/noticia" >
-            <Noticia
-            image="/logo.png"
-            title='titulo 4'
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-            minus enim! Quo sapiente esse adipisci laborum unde omnis vel a quidem
-            maiores? Placeat fugiat quis, culpa harum voluptatibus libero accusamus."/>
-          </Link>
 
         </div>
       </div>

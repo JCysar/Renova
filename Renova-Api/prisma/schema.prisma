@@ -16,6 +16,17 @@ model User {
   email String  @unique
   name  String
   password String @db.Char(60)
+  news New[]
+}
+
+model New {
+  id Int @id @default(autoincrement())
+  title String
+  image String
+  text String @db.LongText
+  author User @relation(fields: [authorId], references: [id])
+  authorId String
+
 }
 
 

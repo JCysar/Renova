@@ -61,3 +61,47 @@ export const findUserById = async (id: string) => {
     await prisma.$disconnect();
   }
 }
+
+
+export const createNew = async (New) => {
+  try {
+    const newCreated = await prisma.new.create({
+      data: New,
+    });
+
+    return newCreated;
+  } finally {
+    await prisma.$disconnect();
+  }
+}
+
+export const News = async () => {
+  try{
+    const latestNews = await prisma.new.findMany({
+      orderBy:{
+        id: 'desc'
+      },
+      take: 4,
+    })
+
+    return latestNews
+  } finally {
+    await prisma.$disconnect();
+  }
+}
+
+
+export const findNewById = async (id: string) => {
+  try{
+    const result = await prisma.new.findUnique({
+      where:{
+        id: Number(id)
+      }
+    })
+
+
+    return result
+  } finally {
+    await prisma.$disconnect();
+  }
+}

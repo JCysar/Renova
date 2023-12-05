@@ -3,9 +3,15 @@
 
 import { useState, use } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 export default function Login() {
+  const router = useRouter()
+  /* useEffect(() => {
+    localStorage.removeItem('token');
+  });
+ */
 
   interface ULogin {
     email: string;
@@ -18,11 +24,13 @@ export default function Login() {
   });
 
 
+
  const handleLogin = async (user: object) => {
 
       const response = await fetch('http://www.localhost:3001/login', {
 
         method: 'POST',
+        redirect: 'manual',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -32,14 +40,16 @@ export default function Login() {
       const data = await response.json()
       if (response.ok) {
         console.log(data);
+        localStorage.setItem('token', data.token)
+        router.push('/formNoticia')
 
-        return alert(data.mensagem)
       } else {
-
-        return alert(data.mensagem)
+        alert(data.mensagem)
       }
 
   };
+
+
 
   return (
     <div className="flex items-center justify-center md:py-40 py-20">
@@ -47,17 +57,17 @@ export default function Login() {
         <h1 className="text-2xl font-bold mb-4 text-center text-Branco">
           Login
         </h1>
-        <form onSubmit={() => use(handleLogin(user))}>
+        <form  onSubmit={() => use(handleLogin(user)) }>
           <div className="mb-4">
             <label
-              htmlFor="username"
+              htmlFor="email"
               className="block text-Branco text-sm font-bold mb-2"
             >
               Usuário
             </label>
             <input
               type="email"
-              id="username"
+              id="email"
               className="w-full border p-2 rounded placeholder:italic placeholder:text-slate-400"
               placeholder="Digite seu Email"
               onChange={(e) => setUser({ ...user, email: e.target.value })}

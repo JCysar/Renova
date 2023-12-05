@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `new` MODIFY `text` LONGTEXT NOT NULL;
