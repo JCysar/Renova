@@ -1,17 +1,17 @@
 
 "use client"
 
-import { useState, use } from "react";
+import { useState, FormEvent,  useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 
 export default function Login() {
   const router = useRouter()
-  /* useEffect(() => {
+  useEffect(() => {
     localStorage.removeItem('token');
   });
- */
+
 
   interface ULogin {
     email: string;
@@ -25,12 +25,11 @@ export default function Login() {
 
 
 
- const handleLogin = async (user: object) => {
-
+ const handleLogin = async (user: ULogin, e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
       const response = await fetch('http://www.localhost:3001/login', {
 
         method: 'POST',
-        redirect: 'manual',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -39,8 +38,8 @@ export default function Login() {
 
       const data = await response.json()
       if (response.ok) {
-        console.log(data);
         localStorage.setItem('token', data.token)
+        alert(data.mensagem)
         router.push('/formNoticia')
 
       } else {
@@ -57,7 +56,7 @@ export default function Login() {
         <h1 className="text-2xl font-bold mb-4 text-center text-Branco">
           Login
         </h1>
-        <form  onSubmit={() => use(handleLogin(user)) }>
+        <form  onSubmit={(e) => (handleLogin(user, e)) }>
           <div className="mb-4">
             <label
               htmlFor="email"

@@ -1,6 +1,6 @@
 "use client"
 
-import { use, useState, useEffect } from "react"
+import { useState, useEffect, FormEvent } from "react"
 import {useRouter } from "next/navigation";
 
 interface UNoticia {
@@ -20,15 +20,14 @@ export default function FormNoticia () {
 
   useEffect(() => {
     const token = localStorage.getItem('token')
-    console.log(token);
     if (!token) {
-      console.log(token);
 
       router.replace("/login");
     }
   }, [router]);
 
-  const handleNew = async ({title,text,image}:UNoticia) => {
+  const handleNew = async ({title,text,image}:UNoticia, e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     const token = localStorage.getItem('token')
 
     const New:UNoticia = {
@@ -46,14 +45,14 @@ export default function FormNoticia () {
       body: JSON.stringify(New),
     });
 
-    const data = await response.json()
+
     if (response.ok) {
-      console.log(data);
       alert("Noticia criada!")
+      router.replace('/')
 
 
     } else {
-      alert(data.mensagem)
+      alert("Erro ao criar noticia")
     }
   }
 
@@ -65,7 +64,7 @@ export default function FormNoticia () {
           <h1 className="text-2xl font-bold mb-4 text-center text-Branco">
               Formulário de Notícia
           </h1>
-          <form onSubmit={() => use(handleNew({title,text,image}))}>
+          <form onSubmit={(e) => handleNew({title,text,image}, e)}>
             <div className="mb-4">
               <label
                 htmlFor="Titulo"
